@@ -1,0 +1,7 @@
+{
+  "name": "Design Muse Weekly",
+  "description": "A skeuomorphic scrapbook-style application for organizing design inspirations weekly with AI-powered terminology extraction.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
