@@ -13,7 +13,13 @@ import { getWeekId, getWeekRangeDisplay, getDayKey, getRandomDecor, getRandomRot
 import { analyzeDailyInspirations } from './services/geminiService';
 import { PolaroidCard } from './components/PolaroidCard';
 import { CONFIG } from './config';
-
+// --- 强制调试：看看变量到底在不在 ---
+console.log("检查变量:", import.meta.env.VITE_API_URL);
+if (!import.meta.env.VITE_API_URL) {
+  alert("❌ 错误：在当前的预览环境中，VITE_API_URL 依然是 undefined！");
+} else {
+  alert("✅ 变量读取成功，地址为: " + import.meta.env.VITE_API_URL);
+}
 const App: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [weeklyEntries, setWeeklyEntries] = useState<{ [weekId: string]: WeeklyData }>({});
