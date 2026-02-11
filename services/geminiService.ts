@@ -29,7 +29,8 @@ export interface DailyAnalysisResult {
  */
 export const analyzeDailyInspirations = async (base64Images: string[], dateContext: string): Promise<DailyAnalysisResult> => {
   // Initialize AI client directly with process.env.API_KEY as per guidelines
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+  // Fix: Initializing GoogleGenAI using process.env.API_KEY directly without additional casting.
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const imageParts = base64Images.map(base64 => ({
     inlineData: {
